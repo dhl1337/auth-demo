@@ -8,8 +8,8 @@ module.exports = function (app) {
     app.get('/auth/facebook', passport.authenticate('facebook'));
     app.get('/auth/facebook/callback', passport.authenticate('facebook',
         {
-            successRedirect: '/#/home/user',
-            failureRedirect: '/#/home/index'
+            successRedirect: '/#/home',
+            failureRedirect: '/#/'
         }));
     app.get('/auth/current', function (req, res) {
         if(req.isAuthenticated()) {

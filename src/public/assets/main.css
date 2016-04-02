@@ -1,0 +1,6 @@
+#loginContainer {
+    margin-top: 100px;
+}
+#loginBtn, #signupBtn {
+    width: 100%;
+}
