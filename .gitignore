@@ -2,3 +2,4 @@
 .idea
 auth.js
 config.js
+node_modules
