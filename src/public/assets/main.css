@@ -4,3 +4,10 @@
 #loginBtn, #signupBtn {
     width: 100%;
 }
+.logout {
+    margin-top: 50px;
+}
+.userName {
+    margin-top: 3%;
+    margin-right: 12%;
+}

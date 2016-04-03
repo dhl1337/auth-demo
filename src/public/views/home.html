@@ -5,14 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<div class="ui container">
-    <h1 class="ui center aligned icon header" style="margin-top: 100px">
-        <img ng-src="{{home.currentUser.photo}}" class="ui small circular image">
-    </h1>
-    <h1 class="ui center aligned header">
-    {{home.currentUser.name}}
-    </h1>
-</div>
-
+    <div class="ui container">
+        <div class="logout">
+            <a class="ui right floated negative button" href="/auth/logout">
+                <i class="sign out icon"></i>
+                Log Out
+            </a>
+        </div>
+        <h2 class="ui center aligned icon header">
+            <img ng-src="{{home.currentUser.photo}}" class="ui small circular image">
+            <br>
+            <div class="userName">
+                {{home.currentUser.name}}
+            </div>
+        </h2>
+    </div>
 </body>
 </html>
