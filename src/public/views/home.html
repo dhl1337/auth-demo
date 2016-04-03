@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Welcome</h1>
+<div class="ui container">
+    <h1 class="ui center aligned icon header" style="margin-top: 100px">
+        <img ng-src="{{home.currentUser.photo}}" class="ui small circular image">
+    </h1>
+    <h1 class="ui center aligned header">
+    {{home.currentUser.name}}
+    </h1>
+</div>
+
 </body>
 </html>

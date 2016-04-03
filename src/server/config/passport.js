@@ -23,7 +23,7 @@ module.exports = function (passport) {
             profileFields: ['emails', 'photos', 'name']
         },
         function(accessToken, refreshToken, profile, done) {
-            //console.log(profile);
+            //console.log('hello',profile);
             process.nextTick(function () {
                 User.findOne({'facebook.id' : profile.id}, function (err, user) {
                     if (err)
@@ -39,7 +39,7 @@ module.exports = function (passport) {
                         newUser.facebook.email = profile.emails[0].value;
                         newUser.facebook.photo = profile.photos[0].value;
                         newUser.facebook.created = new Date().getTime();
-                        console.log(profile._json.location);
+                        //console.log(profile._json.location);
 
                         // save our user to the database
                         newUser.save(function(err) {

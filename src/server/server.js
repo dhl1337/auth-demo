@@ -31,6 +31,10 @@ app.use(express.static(__dirname + '/../public'));
 // Facebook Authentication Endpoints
 require('./routes/facebookRoutes.js')(app);
 
+
+// Twitter Authentication Endpoints
+//require('./routes/twitterRoutes.js')(app);
+
 // Connections
 var port = config.port;
 app.listen(port, function () {

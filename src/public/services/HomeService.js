@@ -6,7 +6,7 @@
         .module('authDemo')
         .service('HomeService', HomeService);
 
-    function HomeService ($http) {
+    function HomeService ($http, $state) {
         this.getCurrentuser = function (enforce) {
             return $http({
                 method: 'GET',
@@ -14,7 +14,7 @@
             }).then(function (response) {
                 return response.data
             }).catch(function (err) {
-                console.log($state.is('home'));
+                //console.log($state.is('home'));
                 if(err.status === 401 && enforce) {
                     $state.go('home');
                 }

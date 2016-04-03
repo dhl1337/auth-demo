@@ -6,7 +6,13 @@
         .module('authDemo')
         .controller('HomeController', ['HomeService', HomeController]);
 
-    function HomeController () {
+    function HomeController (HomeService) {
+        var vm = this;
 
+        HomeService.getCurrentuser().then(function(data) {
+            vm.currentUser = data.facebook;
+            //console.log('this beeter work',data)
+        });
+        //console.log('hey!', vm.currentUser);
     }
 })();
