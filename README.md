@@ -1,8 +1,7 @@
 # auth-demo
-User can login with their email and password. 
+User can login with their email address and password. 
 If the user do not choose use their email, they could use their social media to access the site.
-Once the user input their creditals in they would be navigate to their home page where they could link other socials site 
-with theirs.
+Once the user puts their credentials in, they would be able to navigate to the home page, which allows them to link other social media sites together.
 
 ## Technology
 * Semantic UI
@@ -19,19 +18,19 @@ Clone this repo to your desktop and run `npm install` to install all the depende
 
 `/auth-demo/src/server/config` make sure you add `auth.js` and `config.js`
 
-In your `auth.js` make sure you add this in and fill in with your creditials. 
+In your `auth.js` make sure you add this in and fill in with your credentials. 
 ```
 module.exports = {
-    'facebookAuth' : {
-        clientID: 'FACEBOOK_APP_ID',
-        clientSecret: 'FACEBOOK_APP_SECRET',
-        callbackURL: "http://127.0.0.1:8080/auth/facebook/callback"
-    },
-    'twitterAuth' : {
-        'consumerKey': 'TWITTER_CONSUMER_KEY',
-        'consumerSecret': 'TWITTER_CONSUMER_SECRET',
-        'callbackURL': 'http://127.0.0.1:8080/auth/twitter/callback'
-    }
+    'facebookAuth' : {
+        clientID: 'FACEBOOK_APP_ID',
+        clientSecret: 'FACEBOOK_APP_SECRET',
+        callbackURL: "http://127.0.0.1:8080/auth/facebook/callback"
+    },
+    'twitterAuth' : {
+        'consumerKey': 'TWITTER_CONSUMER_KEY',
+        'consumerSecret': 'TWITTER_CONSUMER_SECRET',
+        'callbackURL': 'http://127.0.0.1:8080/auth/twitter/callback'
+    }
 };
 ```
 
@@ -48,13 +47,13 @@ You could get `TWITTER_CONSUMER_KEY` and `TWITTER_CONSUMER_SECRET` from `https:/
 Here is the Twitter tutorial to get it. `https://www.youtube.com/watch?v=svoUK2DmGmw`
 
 
-In your `config.js` your file should look similar like this. Your secret key can be anything you want too. The port number should be same as the callback url.
+In your `config.js` your file should look similar to this. Your secret key can be anything you want. The port number should be same as the callback url.
 ```
 module.exports = {
-    session: {
-        secret: 'whateversecretkeyowant'
-    },
-    port: 8080
+    session: {
+        secret: 'whateversecretkeyowant'
+    },
+    port: 8080
 };
 ```
 ## Usage
