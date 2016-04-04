@@ -19,6 +19,12 @@
                 templateUrl: '../views/home.html',
                 controller: 'HomeController',
                 controllerAs: 'home'
+            })
+            .state('connect', {
+                url: '/connect-local',
+                templateUrl: '../views/local-connect.html',
+                controller: 'LocalController',
+                controllerAs: 'local'
             });
 
         $urlRouterProvider.otherwise('/');

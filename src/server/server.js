@@ -38,7 +38,7 @@ app.delete('/api/user/:id', function (req, res) {
             res.json('Success!');
         }
     })
-})
+});
 
 app.get('/api/users',function (req, res){
     User.find({})

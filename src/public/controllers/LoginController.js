@@ -4,9 +4,9 @@
 (function () {
     angular
         .module('authDemo')
-        .controller('LoginController', ['LoginService', LoginController]);
+        .controller('LoginController', ['LoginService', '$location',LoginController]);
 
-    function LoginController (LoginService) {
+    function LoginController (LoginService, $location) {
         var vm = this;
 
         vm.signup = signup;
@@ -17,7 +17,12 @@
                 email: email,
                 password: password
             };
-            LoginService.login(loginObj);
+            LoginService.login(loginObj).then(function (data) {
+                console.log(data);
+                if (data) {
+                    $location.path('/home')
+                }
+            });
         }
 
         function signup() {

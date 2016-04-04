@@ -10,6 +10,25 @@ module.exports = function (app) {
             successRedirect: '/#/home',
             failureRedirect: '/#/'
         }));
+    app.get('/connect/facebook', passport.authorize('facebook', { scope: ['email']}));
+    app.get('/unlink/facebook', function (req, res) {
+        var user = req.user;
+
+        user.facebook.token = undefined;
+        user.facebook.email = undefined;
+        user.facebook.id = undefined;
+        user.facebook.created = undefined;
+        user.facebook.name = undefined;
+
+        user.save(function(err) {
+            if (err)
+                throw err;
+            res.redirect('/#/home');
+        })
+    });
+
+
+
     app.get('/auth/current', function (req, res) {
         if(req.isAuthenticated()) {
             res.json(req.user);

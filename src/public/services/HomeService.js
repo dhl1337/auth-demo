@@ -19,5 +19,32 @@
                 }
             });
         };
+        this.linkLocal = function(data) {
+            return $http({
+                method: 'POST',
+                url: '/connect/local',
+                data: data
+            }).then(function(response) {
+                return response.data
+            })
+        };
+        this.unlinkFacebook = function() {
+            return $http({
+                method: 'GET',
+                url: '/unlink/facebook'
+            })
+        };
+        this.unlinkTwitter = function() {
+            return $http({
+                method: 'GET',
+                url: '/unlink/twitter'
+            })
+        };
+        this.unlinklocal = function() {
+            return $http({
+                method: 'GET',
+                url: '/unlink/local'
+            })
+        }
     }
 })();

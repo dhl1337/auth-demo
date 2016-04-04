@@ -1,0 +1,21 @@
+<div class="ui container">
+
+    <div class="ui form" id="loginFormLocal">
+        <div class="ui huge header">Add Local Account</div>
+        <div class="field">
+            <label>Email</label>
+            <div class="ui left icon input">
+                <input type="text" placeholder="Email" ng-model="email">
+                <i class="user icon"></i>
+            </div>
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <div class="ui left icon input">
+                <input type="password" ng-model="password">
+                <i class="lock icon"></i>
+            </div>
+        </div>
+        <a class="ui blue submit button" id="loginBtn" ng-click="local.linkLocal(email, password)">Add Local</a>
+    </div>
+</div>

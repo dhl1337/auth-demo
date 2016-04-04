@@ -1,24 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <div class="ui container">
-        <div class="logout">
-            <a class="ui right floated negative button" href="/auth/logout">
-                <i class="sign out icon"></i>
-                Log Out
-            </a>
-        </div>
-        <h2 class="ui center aligned icon header">
-            <img ng-src="{{home.currentUser.photo}}" class="ui small circular image">
-            <br>
-            <div class="userName">
-                {{home.currentUser.name}}
+<div class="ui container">
+    <div class="ui grid">
+        <div class="sixteen wide column">
+            <div class="logout">
+                <a class="ui right floated negative button" href="/auth/logout">
+                    <i class="sign out icon"></i>
+                    Log Out
+                </a>
             </div>
-        </h2>
+        </div>
     </div>
-</body>
-</html>
+    <div class="ui segments">
+        <div class="ui segment">
+            <h1 class="ui header">Local</h1>
+            <div class="ui list">
+                <div class="item">
+                    <i class="mail outline icon"></i>
+                    <div class="content">
+                        <div class="header">Email</div>
+                        <div class="description">{{home.currentUser.local.email}}</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="lock icon"></i>
+                    <div class="content">
+                        <div class="header">Password</div>
+                        <div class="description">{{home.currentUser.local.password}}</div>
+                    </div>
+                </div>
+            </div>
+            <a class="ui positive button" ng-hide="home.currentUser.local.email" ui-sref="connect">
+                <i class="user icon"></i>
+                Link
+            </a>
+            <div class="ui negative button" ng-show="home.currentUser.local.email" ng-click="home.unlinkLocal()">Unlink</div>
+        </div>
+        <div class="ui segment">
+            <h1 class="ui header">Twitter</h1>
+            <div class="ui list">
+                <div class="item">
+                    <i class="info circle icon"></i>
+                    <div class="content">
+                        <div class="header">Id</div>
+                        <div class="description">{{home.currentUser.twitter.id}}</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="mail outline icon"></i>
+                    <div class="content">
+                        <div class="header">Name</div>
+                        <div class="description">{{home.currentUser.twitter.name}}</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="lock icon"></i>
+                    <div class="content">
+                        <div class="header">Token</div>
+                        <div class="description"><p>{{home.currentUser.twitter.token}}</p></div>
+                    </div>
+                </div>
+            </div>
+            <a class="ui twitter button" ng-hide="home.currentUser.twitter.token" href="/connect/twitter">
+                <i class="twitter icon"></i>
+                Link
+            </a>
+            <div class="ui negative button" ng-show="home.currentUser.twitter.token" ng-click="home.unlinkTwitter()">Unlink</div>
+        </div>
+        <div class="ui segment">
+            <h1 class="ui header">Facebook</h1>
+            <div class="ui list">
+                <div class="item">
+                    <i class="info circle icon"></i>
+                    <div class="content">
+                        <div class="header">Id</div>
+                        <div class="description">{{home.currentUser.facebook.id}}</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="mail outline icon"></i>
+                    <div class="content">
+                        <div class="header">Email</div>
+                        <div class="description">{{home.currentUser.facebook.email}}</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="lock icon"></i>
+                    <div class="content">
+                        <div class="header">Token</div>
+                        {{home.currentUser.facebook.token}}
+                    </div>
+                </div>
+            </div>
+            <a class="ui facebook button" ng-hide="home.currentUser.facebook.token" href="/connect/facebook">
+                <i class="facebook icon"></i>
+                Link
+            </a>
+            <div class="ui negative button" ng-show="home.currentUser.facebook.token" ng-click="home.unlinkFB()">Unlink</div>
+        </div>
+    </div>
+</div>

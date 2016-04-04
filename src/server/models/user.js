@@ -10,14 +10,13 @@ var userSchema = mongoose.Schema({
         token: {type: String},
         email: {type: String},
         name: {type: String},
-        photo: {type: String},
         created: {type: String}
     },
     twitter : {
         id: {type: String},
         token: {type: String},
         name: {type: String},
-        photo: {type: String},
+        email: {type: String},
         created: {type: String}
     },
     local : {
