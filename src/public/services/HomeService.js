@@ -14,7 +14,6 @@
             }).then(function (response) {
                 return response.data
             }).catch(function (err) {
-                //console.log($state.is('home'));
                 if(err.status === 401 && enforce) {
                     $state.go('home');
                 }

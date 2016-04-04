@@ -10,9 +10,16 @@
         var vm = this;
 
         HomeService.getCurrentuser().then(function(data) {
-            vm.currentUser = data.facebook;
-            //console.log('this beeter work',data)
+            if (data.facebook) {
+                vm.currentUser = data.facebook;
+            } else if (data.twitter) {
+                vm.currentUser = data.twitter;
+            } else if (data.local) {
+                vm.currentuser = data.local;
+            }
+            console.log(vm.currentUser);
         });
-        //console.log('hey!', vm.currentUser);
+
+
     }
 })();
