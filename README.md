@@ -1,6 +1,6 @@
 # auth-demo
 User can login with their email address and password. 
-If the user do not choose use their email, they could use their social media to access the site.
+If the user does not choose to use their email, they could use their social media to access the site.
 Once the user puts their credentials in, they would be able to navigate to the home page, which allows them to link other social media sites together.
 
 ## Technology
@@ -18,7 +18,7 @@ Clone this repo to your desktop and run `npm install` to install all the depende
 
 `/auth-demo/src/server/config` make sure you add `auth.js` and `config.js`
 
-In your `auth.js` make sure you add this in and fill in with your credentials. 
+In your `auth.js` fill in the credentials. 
 ```
 module.exports = {
     'facebookAuth' : {
@@ -47,7 +47,7 @@ You could get `TWITTER_CONSUMER_KEY` and `TWITTER_CONSUMER_SECRET` from `https:/
 Here is the Twitter tutorial to get it. `https://www.youtube.com/watch?v=svoUK2DmGmw`
 
 
-In your `config.js` your file should look similar to this. Your secret key can be anything you want. The port number should be same as the callback url.
+In your `config.js` file should look similar to this. Your secret key can be anything you want. The port number should be the same as callback url.
 ```
 module.exports = {
     session: {
@@ -62,8 +62,8 @@ Once the dependencies are installed, you can run `nodemon` to start the applicat
 You will then be able to access it at `127.0.0.1:8080`
 
 ## Known Issues
-* User is not getting notification if the creditial is incorrect.
-* User can login without entering creditials.
+* User is not getting notification if the credentials is incorrect.
+* User can login without entering credentials.
 * User is not getting notifiy after signing up.
 * User have to refresh the page after unlinking from the other accounts.
 
