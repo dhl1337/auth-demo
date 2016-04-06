@@ -18,11 +18,10 @@
                 password: password
             };
             LoginService.login(loginObj).then(function (data) {
-                console.log(data);
                 if (data) {
                     $location.path('/home')
                 }
-            });
+            })
         }
 
         function signup() {
@@ -30,7 +29,11 @@
                 email: vm.email,
                 password: vm.password
             };
-            LoginService.signup(signupObj);
+            LoginService.signup(signupObj).then(function (data) {
+                if (data) {
+                    $location.path('/home')
+                }
+            });
         }
     }
 })();

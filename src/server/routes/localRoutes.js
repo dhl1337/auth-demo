@@ -8,13 +8,12 @@ module.exports = function (app) {
         successRedirect: '/#/home',
         failureRedirect: '/#/'
     }));
-    app.post('/auth/login', passport.authenticate('local-login', {
-        successRedirect: '/#/home',
-        failureRedirect: '/#/'
-    }));
+    app.post('/auth/login', passport.authenticate('local-login'), function (req, res) {
+        res.send(req.user)
+    });
     app.post('/connect/local', passport.authenticate('local-signup', {
         successRedirect: '/#/home',
-        failureRedirect: '/#/home'
+        failureRedirect: '/#/'
     }));
     app.get('/unlink/local', function (req, res) {
         var user = req.user;

@@ -23,7 +23,7 @@ module.exports = function (app) {
         user.save(function(err) {
             if (err)
                 throw err;
-            res.redirect('/home');
+            res.redirect('/#/home');
         })
     })
 };

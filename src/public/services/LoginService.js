@@ -19,6 +19,8 @@
                 method: 'POST',
                 url: '/auth/login',
                 data: login
+            }).then(function(response) {
+                return response.data
             })
         };
     }

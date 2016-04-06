@@ -11,8 +11,5 @@ module.exports = {
         'consumerKey': 'cvyiB9zQY3KxQPpgIxKydwVnk',
         'consumerSecret': '6jjNpYLpSjIEurK9CcBmNuyqrZeqCprdnVKsOJ7Y4diVqJ3ZYQ',
         'callbackURL': 'http://127.0.0.1:8080/auth/twitter/callback'
-    },
-    'localAuth': {
-
     }
 };

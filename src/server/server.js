@@ -9,6 +9,7 @@ var bodyParser = require('body-parser'),
     db = require('./config/database.js'),
     mongoose = require('mongoose'),
     passport = require('passport'),
+    flash = require('connect-flash'),
     config = require('./config/config.js');
 
 // Express

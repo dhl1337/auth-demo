@@ -29,7 +29,7 @@ module.exports = function (app) {
 
 
 
-    app.get('/auth/current', function (req, res) {
+    app.get('/auth/current', isLoggedIn,function (req, res) {
         if(req.isAuthenticated()) {
             res.json(req.user);
             //console.log('this is ',req.user);
@@ -40,5 +40,14 @@ module.exports = function (app) {
     app.get('/auth/logout', function (req, res) {
         req.logout();
         res.redirect('/#/');
-    })
+    });
+    function isLoggedIn(req, res, next) {
+
+        // if user is authenticated in the session, carry on
+        if (req.isAuthenticated())
+            return next();
+
+        // if they aren't redirect them to the home page
+        res.redirect('/#/');
+    }
 };
