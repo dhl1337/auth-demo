@@ -64,6 +64,7 @@ You will then be able to access it at `127.0.0.1:8080`
 ## Known Issues
 * User is not getting notification if the credentials is incorrect.
 * User is not getting notification the email have been taken.
+* User can access unauthorize pages.
 * User have to refresh the page after unlinking from the other accounts.
 
 ## Contact
