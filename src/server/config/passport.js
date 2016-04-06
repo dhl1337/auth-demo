@@ -30,7 +30,7 @@ module.exports = function (passport) {
                 if (err)
                     return done(err);
                 if (user)
-                    return done(null, false, console.log('email already taken'));
+                    return done(null, false, console.log('email been taken.'));
                 if (!req.user) {
                     var newUser = new User();
 
@@ -73,9 +73,9 @@ module.exports = function (passport) {
                     if (err)
                         return done(err);
                     if (!user)
-                        return done(null, false, console.log('uh oh','failed'));
+                        return done(null, false, console.log('no user found.'));
                     if (!user.validPassword(password))
-                        return done(null, false, console.log('bad password'));
+                        return done(null, false, console.log('bad password.'));
                     return done(null, user);
                 })
             })

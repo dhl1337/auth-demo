@@ -4,12 +4,11 @@
 var passport = require('passport');
 
 module.exports = function (app) {
-    app.post('/auth/signup', passport.authenticate('local-signup', {
-        successRedirect: '/#/home',
-        failureRedirect: '/#/'
-    }));
-    app.post('/auth/login', passport.authenticate('local-login'), function (req, res) {
-        res.send(req.user)
+    app.post('/auth/signup', passport.authenticate('local-signup'), function(req, res) {
+        res.send(req.user);
+    });
+    app.post('/auth/login', passport.authenticate('local-login'), function(req, res) {
+        res.send(req.user);
     });
     app.post('/connect/local', passport.authenticate('local-signup', {
         successRedirect: '/#/home',

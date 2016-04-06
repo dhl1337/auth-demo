@@ -30,6 +30,7 @@
                 password: vm.password
             };
             LoginService.signup(signupObj).then(function (data) {
+                console.log(data);
                 if (data) {
                     $location.path('/home')
                 }
